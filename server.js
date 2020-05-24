@@ -10,6 +10,9 @@ connectDB();
 //initialize the middleware
 app.use(express.json({ extended: false }));
 
+//define routes
+app.use('/api/users', require('./routes/api/users'));
+
 const PORT = process.env.PORT || 5000
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));

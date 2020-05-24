@@ -4,6 +4,8 @@
   "description": "An OAuth app for AttainU Interview",
   "main": "server.js",
   "scripts": {
+    "start": "node server",
+    "server": "nodemon server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "SaiChandra",

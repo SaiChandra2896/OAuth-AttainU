@@ -10,11 +10,12 @@ const { check, validationResult } = require('express-validator');
 const User = require('../../models/User');
 
 //register user
-router.get('/', [
+router.post('/', [
     check('name', 'Name is required').not().isEmpty(),
     check('email', 'please enter valid email').isEmail(),
     check('password', 'please enter a password with 6 or more charecters').isLength({ min: 6 })
 ], async (req, res) => {
+    console.log(req.body);
     //Extract the validation errors from req
     const errors = validationResult(req);
 
@@ -62,3 +63,5 @@ router.get('/', [
         res.status(500).send('Server Error');
     }
 });
+
+module.exports = router;
