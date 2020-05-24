@@ -1,4 +1,4 @@
 {
     "mongoURI": "mongodb+srv://sai:12345@oauth-dxlns.mongodb.net/test?retryWrites=true&w=majority",
-    "jwtSecret": "mysecrettoken"
+    "jwtSecret": "mysecrettoken1"
 }
