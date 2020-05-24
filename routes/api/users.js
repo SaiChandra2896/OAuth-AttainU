@@ -15,7 +15,7 @@ router.post('/', [
     check('email', 'please enter valid email').isEmail(),
     check('password', 'please enter a password with 6 or more charecters').isLength({ min: 6 })
 ], async (req, res) => {
-    console.log(req.body);
+    //console.log(req.body);
     //Extract the validation errors from req
     const errors = validationResult(req);
 
@@ -30,7 +30,8 @@ router.post('/', [
 
     try {
         //find user by email
-        let user = User.findOne({ email });
+        let user = await User.findOne({ email });
+        //console.log(user.name);
 
         //if user is there return 
         if (user) {
